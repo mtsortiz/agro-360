@@ -1,4 +1,4 @@
-import { Globe, Share2, Mail, Phone, MapPin } from "lucide-react";
+import { Globe, Share2, Mail, Phone } from "lucide-react";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -20,19 +20,9 @@ export default function Footer() {
             <p className="text-xs text-white/70 leading-relaxed max-w-sm">
               Llevando la excelencia tecnológica y la precisión del monitoreo en tiempo real a cada establecimiento ganadero de la Argentina.
             </p>
-            <div className="mt-6 space-y-2 text-xs text-white/60">
-              <div className="flex items-center gap-2">
-                <Mail size={14} className="text-accent" />
-                <span>contacto@campodigital.com.ar</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={14} className="text-accent" />
-                <span>+54 (11) 5234-5678</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin size={14} className="text-accent" />
-                <span>Buenos Aires, Argentina</span>
-              </div>
+            <div className="mt-6 flex items-center gap-3 text-xs text-white/60">
+              <Mail size={14} className="text-accent" />
+              <Phone size={14} className="text-accent" />
             </div>
           </div>
 
