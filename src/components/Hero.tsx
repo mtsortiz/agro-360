@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Download, Sparkles } from "lucide-react";
 import AppInteractiveMockup from "./AppMockups";
 
-export default function Hero() {
+export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <section className="relative px-6 py-12 md:py-24 max-w-7xl mx-auto overflow-hidden">
       <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -26,9 +26,12 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-wrap gap-4">
-            <button className="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-md hover:-translate-y-0.5 active:scale-98 cursor-pointer">
+            <button 
+              onClick={onOpenModal}
+              className="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-md hover:-translate-y-0.5 active:scale-98 cursor-pointer"
+            >
               <Download size={20} />
-              <span>Instalar Gratis</span>
+              <span>Quiero la App</span>
             </button>
             <a href="#features" className="bg-white hover:bg-neutral-50 text-neutral-700 border border-neutral-200 px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-xs hover:-translate-y-0.5 active:scale-98 cursor-pointer">
               <span>Ver Funcionalidades</span>

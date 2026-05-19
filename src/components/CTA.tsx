@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Download, ArrowUpRight, Sparkles } from 'lucide-react';
 import Logo from './Logo';
 
-export default function CTA() {
+export default function CTA({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <section className="bg-primary-container text-white py-24 px-6 relative overflow-hidden">
       {/* Círculos decorativos de fondo */}
@@ -31,7 +31,10 @@ export default function CTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-accent hover:bg-[#D97706] text-white font-bold px-8 py-4 rounded-2xl flex items-center gap-2 shadow-lg transition-all hover:-translate-y-0.5 active:scale-98 cursor-pointer">
+          <button 
+            onClick={onOpenModal}
+            className="bg-accent hover:bg-[#D97706] text-white font-bold px-8 py-4 rounded-2xl flex items-center gap-2 shadow-lg transition-all hover:-translate-y-0.5 active:scale-98 cursor-pointer"
+          >
             <Download size={20} />
             <span>Descargar CampoDigital</span>
           </button>

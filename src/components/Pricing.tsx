@@ -47,7 +47,7 @@ const plans = [
   }
 ];
 
-export default function Pricing() {
+export default function Pricing({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <section id="pricing" className="py-24 px-6 max-w-7xl mx-auto scroll-mt-16">
       <div className="text-center mb-16">
@@ -96,11 +96,14 @@ export default function Pricing() {
               ))}
             </ul>
 
-            <button className={`w-full py-3.5 rounded-2xl font-bold transition-all text-xs cursor-pointer ${
-              plan.highlight 
-                ? 'bg-accent text-white hover:bg-[#D97706] shadow-xs active:scale-98' 
-                : 'border border-primary text-primary hover:bg-primary/5 active:scale-98'
-            }`}>
+            <button 
+              onClick={onOpenModal}
+              className={`w-full py-3.5 rounded-2xl font-bold transition-all text-xs cursor-pointer ${
+                plan.highlight 
+                  ? 'bg-accent text-white hover:bg-[#D97706] shadow-xs active:scale-98' 
+                  : 'border border-primary text-primary hover:bg-primary/5 active:scale-98'
+              }`}
+            >
               {plan.cta}
             </button>
           </motion.div>

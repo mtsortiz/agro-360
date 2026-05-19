@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Menu, Download } from "lucide-react";
 import Logo from "./Logo";
 
-export default function Navbar() {
+export default function Navbar({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-surface/80 shadow-xs">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
@@ -22,12 +22,12 @@ export default function Navbar() {
         </div>
 
         <div className="flex gap-4 items-center">
-          <button className="text-primary font-semibold text-sm px-4 py-2 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer">
-            Ingresar
-          </button>
-          <button className="bg-primary hover:bg-primary-container text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all shadow-xs hover:shadow-md active:scale-98 flex items-center gap-2 cursor-pointer">
+          <button 
+            onClick={onOpenModal}
+            className="bg-primary hover:bg-primary-container text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all shadow-xs hover:shadow-md active:scale-98 flex items-center gap-2 cursor-pointer"
+          >
             <Download size={16} />
-            <span>Descargar App</span>
+            <span>Quiero la App</span>
           </button>
           <button className="md:hidden text-primary cursor-pointer">
             <Menu size={24} />
