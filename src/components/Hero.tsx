@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download, Sparkles } from "lucide-react";
+import AppInteractiveMockup from "./AppMockups";
 
 export default function Hero() {
   return (
-    <section className="relative px-6 py-20 md:py-32 max-w-7xl mx-auto overflow-hidden">
+    <section className="relative px-6 py-12 md:py-24 max-w-7xl mx-auto overflow-hidden">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
@@ -11,40 +12,42 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="z-10"
         >
-          <div className="inline-block bg-secondary-container text-secondary px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-6">
-            R6 Innovation
+          <div className="inline-flex items-center gap-1.5 bg-accent-container text-accent px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-6">
+            <Sparkles size={12} />
+            <span>by R6 Innovation</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-primary leading-[1.1] mb-6">
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-headline font-extrabold tracking-tight text-primary-container leading-[1.1] mb-6">
             Gestión ganadera inteligente en la palma de tu mano
           </h1>
-          <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-lg mb-10">
-            Digitalizá tu campo con la app más completa de Argentina. Monitoreo en tiempo real, cumplimiento normativo y trazabilidad total.
+          
+          <p className="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-lg mb-10">
+            Digitalizá tu establecimiento con la app ganadera más intuitiva de Argentina. Monitoreo en tiempo real, trazabilidad por lote e individuo y cumplimiento de normativas SENASA sin necesidad de conexión.
           </p>
+          
           <div className="flex flex-wrap gap-4">
-            <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-primary-container transition-all shadow-lg hover:-translate-y-1">
-              Empezar ahora
-              <ArrowRight size={20} />
+            <button className="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-md hover:-translate-y-0.5 active:scale-98 cursor-pointer">
+              <Download size={20} />
+              <span>Instalar Gratis</span>
             </button>
-            <button className="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold hover:bg-surface-container-high transition-all">
-              Ver demo
-            </button>
+            <a href="#features" className="bg-white hover:bg-neutral-50 text-neutral-700 border border-neutral-200 px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-xs hover:-translate-y-0.5 active:scale-98 cursor-pointer">
+              <span>Ver Funcionalidades</span>
+              <ArrowRight size={18} className="text-neutral-400" />
+            </a>
           </div>
         </motion.div>
 
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 2 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+          className="flex justify-center md:justify-end relative"
         >
-          <div className="absolute -top-20 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
-          <div className="relative z-10 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-surface-container-highest/50">
-            <img 
-              className="rounded-[2rem] w-full h-auto object-cover aspect-[9/19]" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5T5Xk9L11TJRY2uffPLUgyFFdOU99OoVk7si8YFWi5pAZNfCy8IZrWx4A2-_dgFgwHFrSRhvMSCkIRvt_SsON9hmDPEYDBTJNALCScasj-HuH46WWQDkYbm91mZdfFrDKVpY5m5ad0b-yQmFcagdLXW-kpWbxd7vIYyxE7lX55wmxN-eM5syluwWbHSxKme2LZyUjq0RU04rowg4DAtvDQ1ghBm5vZO_Dv-MpEr-G6BymdaenOb-7ulOfrf2d0686LZjoLcm5qUQ" 
-              alt="Agro 360 App Dashboard"
-              referrerPolicy="no-referrer"
-            />
+          {/* Círculo sutil en el fondo del teléfono */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary-light/20 rounded-full blur-3xl -z-10"></div>
+          
+          <div className="relative z-10 w-full max-w-[340px]">
+            <AppInteractiveMockup />
           </div>
         </motion.div>
       </div>
